@@ -41,7 +41,7 @@ def main(args=None):
         
 
         return 0
-    except KeyboardInterrupt:
+    finally:
         exit()
  
 if __name__ == '__main__':
