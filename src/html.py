@@ -15,7 +15,9 @@ def html(args=None):
         url2 = url.split('https://')
         resolve = url2[1]
 
-        print(os.listdir('./src/export/'))
+        dir = os.path.exists('./src/export/')
+        if not dir:
+            os.makedirs('./src/export/')
 
         with open(f'./src/export/{resolve}.txt', 'wb') as writer:
             writer.write(sts.text.encode("utf-8"))
